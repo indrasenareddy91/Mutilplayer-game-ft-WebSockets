@@ -76,9 +76,10 @@
    let clientId = null
    let gameId = null
    let playerColor = null
-   const url = window.location.href
-   console.log(url)
-   let ws = new WebSocket(`wss://${url}`)
+   const url = window.location.host
+   console.log(window.location)
+   let host = console.log()
+   let ws = new WebSocket(host.toString())
    const btnCreate = document.getElementById("btnCreate")
    const btnJoin = document.getElementById("btnJoin")
    const txtGameId = document.getElementById("txtGameId")
@@ -89,17 +90,6 @@
 
    //wiring events
 
-   ws.onerror = (event) => {
-    if (ws.readyState === WebSocket.CONNECTING) {
-     // If the WebSocket is still in the CONNECTING state, wait and try again
-     setTimeout(() => {
-      ws = new WebSocket(`wss://${url}`)
-     }, 1000) // Wait for 1 second before trying again
-    } else {
-     // Handle other errors as needed
-     console.error("WebSocket error", event)
-    }
-   }
    ws.onmessage = (message) => {
     //message.data
     const response = JSON.parse(message.data)
