@@ -1,0 +1,17 @@
+{
+ "name": "shit_sockets",
+ "version": "1.0.0",
+ "description": "",
+ "main": "shit.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "guid": "^0.0.12",
+  "uuid": "^9.0.0",
+  "websocket": "^1.0.34"
+ }
+}
