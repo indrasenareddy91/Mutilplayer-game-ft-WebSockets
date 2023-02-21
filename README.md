@@ -1,2 +1,3 @@
 # Ball-game-Ft-Websockets
-Just a simple game that uses WebSockets!!!
+
+Just a simple Multiplayer game that uses WebSockets!!!
