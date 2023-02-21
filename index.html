@@ -78,7 +78,7 @@
    let playerColor = null
    const url = window.location.href
    console.log(url)
-   let ws = new WebSocket(`ws://${url}`)
+   let ws = new WebSocket(`wss://${url}`)
    const btnCreate = document.getElementById("btnCreate")
    const btnJoin = document.getElementById("btnJoin")
    const txtGameId = document.getElementById("txtGameId")
