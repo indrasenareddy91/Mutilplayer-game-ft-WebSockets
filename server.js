@@ -1,13 +1,16 @@
 const { v4: uuidv4 } = require("uuid")
 const http = require("http")
 const app = require("express")()
-app.get("/", (req, res) => res.sendFile(__dirname + "/index.html"))
-const port = 9090
-app.listen(port, () => console.log("Listening on http port 9091"))
+const port = process.env.PORT || 9090
+app.get("/", (req, res) => {
+ res.write(port)
+ res.end()
+})
+app.listen(port, () => console.log(`Listening on http port ${port}`))
 const websocketServer = require("websocket").server
 const httpServer = http.createServer()
 const server = port + 1
-httpServer.listen(server, () => console.log("Listening.. on 9090"))
+httpServer.listen(server, () => console.log(`Listening.. on ${server}`))
 //hashmap clients
 const clients = {}
 const games = {}
