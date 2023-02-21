@@ -78,7 +78,7 @@
    let playerColor = null
    const url = window.location.hostname
    console.log(window.location)
-   const host = `wss://${url}`
+   const host = `wss://${url}:9090`
    console.log("hello")
    let ws = new WebSocket(host)
    const btnCreate = document.getElementById("btnCreate")
