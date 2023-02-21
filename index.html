@@ -88,26 +88,7 @@
    const gameCreated = document.querySelector(".gameCreated")
 
    //wiring events
-   btnJoin.addEventListener("click", (e) => {
-    if (gameId === null) gameId = txtGameId.value
 
-    const payLoad = {
-     method: "join",
-     clientId: clientId,
-     gameId: gameId,
-    }
-
-    ws.send(JSON.stringify(payLoad))
-   })
-
-   btnCreate.addEventListener("click", (e) => {
-    const payLoad = {
-     method: "create",
-     clientId: clientId,
-    }
-
-    ws.send(JSON.stringify(payLoad))
-   })
    ws.onerror = (event) => {
     if (ws.readyState === WebSocket.CONNECTING) {
      // If the WebSocket is still in the CONNECTING state, wait and try again
@@ -198,6 +179,27 @@
      }
     }
    }
+
+   btnJoin.addEventListener("click", (e) => {
+    if (gameId === null) gameId = txtGameId.value
+
+    const payLoad = {
+     method: "join",
+     clientId: clientId,
+     gameId: gameId,
+    }
+
+    ws.send(JSON.stringify(payLoad))
+   })
+
+   btnCreate.addEventListener("click", (e) => {
+    const payLoad = {
+     method: "create",
+     clientId: clientId,
+    }
+
+    ws.send(JSON.stringify(payLoad))
+   })
   </script>
  </body>
 </html>
