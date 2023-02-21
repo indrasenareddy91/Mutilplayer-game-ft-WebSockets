@@ -108,7 +108,17 @@
 
     ws.send(JSON.stringify(payLoad))
    })
-
+   ws.onerror = (event) => {
+    if (ws.readyState === WebSocket.CONNECTING) {
+     // If the WebSocket is still in the CONNECTING state, wait and try again
+     setTimeout(() => {
+      socket = new WebSocket("wss://example.com/ws")
+     }, 1000) // Wait for 1 second before trying again
+    } else {
+     // Handle other errors as needed
+     console.error("WebSocket error", event)
+    }
+   }
    ws.onmessage = (message) => {
     //message.data
     const response = JSON.parse(message.data)

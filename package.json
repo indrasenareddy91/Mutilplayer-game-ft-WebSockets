@@ -10,6 +10,7 @@
  "author": "",
  "license": "ISC",
  "dependencies": {
+  "ably": "^1.2.36",
   "guid": "^0.0.12",
   "uuid": "^9.0.0",
   "websocket": "^1.0.34"
