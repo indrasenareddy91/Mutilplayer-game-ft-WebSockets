@@ -76,9 +76,10 @@
    let clientId = null
    let gameId = null
    let playerColor = null
-   const url = window.location.origin
+   const url = window.location.hostname
    console.log(window.location)
    const host = `wss://${url}`
+   console.log("hello")
    let ws = new WebSocket(host)
    const btnCreate = document.getElementById("btnCreate")
    const btnJoin = document.getElementById("btnJoin")
